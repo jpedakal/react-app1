@@ -10,13 +10,17 @@ class Header extends Component {
             keyword: "User text here"
         }
     }
+
+    inputChanges(data){
+        this.setState({keyword: data.target.value? data.target.value: "User text here"})
+    }
     render() {
         return (
             <Fragment>
                 <header>
                     <p className="logo">{this.state.title}</p>
                     <center>
-                        <input />
+                        <input onChange={this.inputChanges.bind(this)}/>
                         <p>{this.state.keyword}</p>
                     </center>
                 </header>

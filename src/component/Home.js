@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import ReactDOM from 'react-dom';
 import Header from './Header';
-import NewsDisplay from './NewsDisplay';
+//import NewsDisplay from './NewsDisplay';
 import JSON from '../db.json';
 
 class Home extends Component {
