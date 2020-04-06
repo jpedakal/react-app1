@@ -1,13 +1,16 @@
 import React from 'react';
+import LazyLoad from 'react-lazyload';
 
 const newsDisplay = (props) => {
 
     const newsData = props.newsInfo.map((data, index) => {
         return (
-            <div>
-                <h3>{data.title}</h3>
-                <p>{data.feed}</p>
-            </div>
+            <LazyLoad height={300} throttle={500} key={data.id}>
+                <div>
+                    <h3>{data.title}</h3>
+                    <p>{data.feed}</p>
+                </div>
+            </LazyLoad>
         )
     })
 
