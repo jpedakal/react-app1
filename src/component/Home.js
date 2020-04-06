@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import Header from './Header';
-//import NewsDisplay from './NewsDisplay';
+import NewsDisplay from './NewsDisplay';
 import JSON from '../db.json';
 
 class Home extends Component {
@@ -15,6 +15,7 @@ class Home extends Component {
         return (
             <Fragment>
                 <Header />
+                <NewsDisplay newsInfo={this.state.news}/>
             </Fragment>
         )
     }
