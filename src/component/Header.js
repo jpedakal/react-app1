@@ -11,8 +11,8 @@ class Header extends Component {
         }
     }
 
-    inputChanges(data){
-        this.setState({keyword: data.target.value? data.target.value: "User text here"})
+    inputChange(event) {
+        this.setState({ keyword: event.target.value ? event.target.value : "User text here" })
     }
     render() {
         return (
@@ -20,7 +20,7 @@ class Header extends Component {
                 <header>
                     <p className="logo">{this.state.title}</p>
                     <center>
-                        <input onChange={this.inputChanges.bind(this)}/>
+                        <input onChange={this.inputChange.bind(this)} />
                         <p>{this.state.keyword}</p>
                     </center>
                 </header>
