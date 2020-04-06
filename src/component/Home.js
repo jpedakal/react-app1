@@ -8,7 +8,6 @@ class Home extends Component {
         super()
         this.state = {
             news: JSON,
-            filtered: JSON
         }
     }
     render() {
