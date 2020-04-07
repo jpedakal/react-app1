@@ -12,8 +12,10 @@ class Header extends Component {
     }
 
     inputChange(event) {
-        this.setState({ keyword: event.target.value ? event.target.value : "User text here" })
+        this.setState({ keyword: event.target.value ? event.target.value : "User text here" });
+        this.props.userText(event.target.value)
     }
+
     render() {
         return (
             <Fragment>

@@ -4,17 +4,27 @@ import NewsDisplay from './NewsDisplay';
 import JSON from '../db.json';
 
 class Home extends Component {
+
     constructor() {
         super()
         this.state = {
             news: JSON,
+            filter: JSON
         }
     }
+
+    filterNews(keyword){
+         const output= this.state.news.filter((data)=>{
+             return data.title.toLowerCase().indexOf(keyword.toLowerCase())>-1
+         })
+         this.setState({filter: output})
+    }
+
     render() {
         return (
             <Fragment>
-                <Header />
-                <NewsDisplay newsInfo={this.state.news}/>
+                <Header userText={(userInput)=> this.filterNews(userInput)}/>
+                <NewsDisplay newsInfo={this.state.filter}/>
             </Fragment>
         )
     }
